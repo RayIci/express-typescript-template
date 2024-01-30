@@ -1,5 +1,5 @@
 import { app } from "@/app";
-import { LoadEnv } from "./helpers/EnvHelper";
+import { LoadEnv } from "./helpers/env-helper";
 
 LoadEnv();
 
