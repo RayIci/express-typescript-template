@@ -13,11 +13,15 @@ import { User } from "./user";
 import { UsersService, UserCreationParams } from "./usersService";
 import { provideSingleton } from "@/util/provideSingleton";
 import { inject } from "inversify";
+import LoggerInterface from "@/util/LoggerInterface";
 
 @Route("users")
 @provideSingleton(UsersController)
 export class UsersController extends Controller {
-  constructor(@inject(UsersService) private usersService: UsersService) {
+  constructor(
+    @inject(UsersService) private usersService: UsersService,
+    @inject("Logger") private logger: LoggerInterface
+  ) {
     super();
   }
 
@@ -32,6 +36,7 @@ export class UsersController extends Controller {
     @Path() userId: number,
     @Query() name?: string
   ): Promise<User> {
+    this.logger.info(`User ${userId} requested`);
     return this.usersService.get(userId, name);
   }
 

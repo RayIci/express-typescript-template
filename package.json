@@ -20,7 +20,8 @@
     "inversify": "^6.0.2",
     "inversify-binding-decorators": "^4.0.0",
     "swagger-ui-express": "^5.0.0",
-    "tsoa": "^6.0.1"
+    "tsoa": "^6.0.1",
+    "winston": "^3.11.0"
   },
   "devDependencies": {
     "@types/compression": "^1.7.5",
