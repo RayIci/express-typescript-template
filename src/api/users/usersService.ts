@@ -1,8 +1,10 @@
+import { provideSingleton } from "@/util/provideSingleton";
 import { User } from "./user";
 
 export type UserCreationParams = Pick<User, "email" | "name" | "phoneNumbers">;
 
 // Dummy user service
+@provideSingleton(UsersService)
 export class UsersService {
   public get(id: number, name?: string): User {
     return {

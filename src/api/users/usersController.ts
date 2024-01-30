@@ -11,9 +11,16 @@ import {
 } from "tsoa";
 import { User } from "./user";
 import { UsersService, UserCreationParams } from "./usersService";
+import { provideSingleton } from "@/util/provideSingleton";
+import { inject } from "inversify";
 
 @Route("users")
+@provideSingleton(UsersController)
 export class UsersController extends Controller {
+  constructor(@inject(UsersService) private usersService: UsersService) {
+    super();
+  }
+
   @Get("{userId}")
   /**
    * Retrieves the details of an existing user.
@@ -25,7 +32,7 @@ export class UsersController extends Controller {
     @Path() userId: number,
     @Query() name?: string
   ): Promise<User> {
-    return new UsersService().get(userId, name);
+    return this.usersService.get(userId, name);
   }
 
   @SuccessResponse("201", "Created") // Custom success response
