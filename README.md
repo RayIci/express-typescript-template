@@ -1,6 +1,6 @@
-# Serverless Express Server Template (Typescript)
+# Express Server Template (Typescript)
 
-This is a simple template for a serverless server with typescript.
+This is a simple template for a express server with typescript.
 
 ## How to use
 
