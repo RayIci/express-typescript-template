@@ -1,5 +1,5 @@
 {
-  "name": "serverless-express-typescript-template",
+  "name": "express-typescript-template",
   "version": "1.0.0",
   "main": "index.js",
   "author": "Alex Valle <alexvalle75@gmail.com>",
